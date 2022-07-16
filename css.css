@@ -1,0 +1,23 @@
+﻿* {
+    padding:0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.login__wrap {
+    border: 1px solid rgb(236, 238, 242);
+    border-radius: 4px;
+    margin: 0px auto;
+    width: 440px;
+    padding: 48px 40px;
+}
+.button__stylebutton {
+    cursor: pointer;
+    background-color: rgb(26, 124, 255);
+    border-radius: 4px;
+    padding: 15px 32px 16px;
+    color:white;
+    font-size:18px;
+    display: inline-flex;
+}
+body {
+}
