@@ -1,7 +1,6 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
-
 
 .App-header {
   background-color: #282c34;
@@ -15,19 +14,33 @@
 }
 
 .login__wrap {
+  position: absolute;
   border: 1px solid rgb(236, 238, 242);
   border-radius: 4px;
-  margin: 0px auto;
   width: 440px;
-  padding: 48px 40px;
+  height: 300px;
+  padding: 20px 40px;
+  left: 50%;
+  top: 50%;
+  margin: -150px 0px 0px -220px;
 }
 .button__stylebutton {
   cursor: pointer;
   background-color: rgb(26, 124, 255);
   border-radius: 4px;
   border: none;
-  padding: 15px 32px 16px;
-  color:white;
-  font-size:18px;
+  padding: 10px 20px;
+  color: white;
+  font-size: 18px;
   display: inline-flex;
+}
+.login__input__id {
+  width: 290px;
+  height: 40px;
+  display: block;
+}
+.login__input__pw {
+  width: 290px;
+  height: 40px;
+  display: block;
 }
