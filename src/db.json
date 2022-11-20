@@ -1,0 +1,9 @@
+{
+  "users": [
+    {
+      "id": "park",
+      "password": "qwert1234!",
+      "name": "자택경비원"
+    }
+  ]
+}
