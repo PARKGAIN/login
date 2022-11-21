@@ -1,6 +1,18 @@
 import React from "react";
 
 function Login() {
+  function postData() {
+    fetch("http://localhost:8888/users", {
+      method: "POST",
+      body: JSON.stringify(user),
+      headers: {
+        "content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => console.log(json));
+  }
+
   return (
     <div>
       <div class="login__wrap">
@@ -32,7 +44,11 @@ function Login() {
               </div>
             </div>
             <br />
-            <button type="button" class="button__stylebutton">
+            <button
+              type="button"
+              class="button__stylebutton"
+              onClick={postData}
+            >
               로그인
             </button>
           </div>
