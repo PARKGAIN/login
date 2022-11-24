@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 function Login() {
+  const [id, setId] = useState();
+  const [pw, setPw] = useState();
   function postData() {
     fetch("http://localhost:8888/users", {
       method: "POST",
-      body: JSON.stringify(user),
+      body: id,
       headers: {
         "content-type": "application/json; charset=UTF-8",
       },
@@ -12,41 +14,53 @@ function Login() {
       .then((response) => response.json())
       .then((json) => console.log(json));
   }
+  // 이메일 입력값과 비번 입력값 받아서 객체에다가 넣어야하는데...
+  let a = function onChangeId() {
+    setId(id);
+  };
+  let b = function onChangePw() {
+    setPw(pw);
+  };
+  useEffect(a, b, []);
 
   return (
     <div>
-      <div class="login__wrap">
+      <div className="login__wrap">
         <h4>로그인</h4>
-        <div class="login__inner">
-          <div class="login__login_center">
+        <div className="login__inner">
+          <div className="login__login_center">
             <input
-              class="login__input__id"
+              className="login__input__id"
               id="id"
               type="text"
               placeholder="아이디"
+              value={id}
+              onChange={a}
             />
             <input
-              class="login__input__pw"
+              className="login__input__pw"
               id="password"
               type="password"
               placeholder="비밀번호"
+              value={pw}
+              onChange={b}
             />
-            <div class="login__login_support">
-              <span class="checkbox">
+            <div className="login__login_support">
+              <span className="checkbox">
                 <i></i>
               </span>
-              <div class="label">
-                <p class="cursor-pointer">아이디 저장</p>
+              <div className="label">
+                <p className="cursor-pointer">아이디 저장</p>
               </div>
-              <div class="login__wrap_find_id_join">
-                <a class="cursor-pointer">아이디,비밀번호 찾기</a>
-                <a class="cursor-pointer">회원가입</a>
+              <div className="login__wrap_find_id_join">
+                <a className="cursor-pointer">아이디,비밀번호 찾기</a>
+                <a className="cursor-pointer">회원가입</a>
               </div>
             </div>
             <br />
             <button
               type="button"
-              class="button__stylebutton"
+              className="button__stylebutton"
               onClick={postData}
             >
               로그인
