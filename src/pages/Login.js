@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 
 function Login() {
-  const [id, setId] = useState();
-  const [pw, setPw] = useState();
+  const [input,setInput] = useState({
+    id : "",
+    pw : "",
+  })
   function postData() {
     fetch("http://localhost:8888/users", {
       method: "POST",
@@ -15,12 +17,12 @@ function Login() {
       .then((json) => console.log(json));
   }
   // 이메일 입력값과 비번 입력값 받아서 객체에다가 넣어야하는데...
-  let a = function onChangeId() {
-    setId(id);
-  };
-  let b = function onChangePw() {
-    setPw(pw);
-  };
+ // let a = function onChangeId() {
+ //   setId(id);
+ // };
+ // let b = function onChangePw() {
+ //   setPw(pw);
+ // };
   useEffect(a, b, []);
 
   return (
