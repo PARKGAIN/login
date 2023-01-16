@@ -1,25 +1,43 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useRecoilValue } from "recoil";
-import { userListState } from "../atoms/userAtoms";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { userListState, userSessionState } from "../atoms/userAtoms";
 import { Link } from "react-router-dom";
 function Login() {
+  const navigate = useNavigate();
   const [input, setInput] = useState({
     id: "",
     pw: "",
   });
-  const users = useRecoilValue(userListState);
-  console.dir(users);
-  const navigate = useNavigate();
+  const userList = useRecoilValue(userListState);
+  const [loginSession, setLoginSession] = useRecoilState(userSessionState);
+
   const setId = (e) => {
     setInput({ ...input, id: e.target.value });
   };
   const setPw = (e) => {
     setInput({ ...input, pw: e.target.value });
   };
-  function submit(x, y) {}
-  //유저정보 있으면 Home으로 이동시키고
-  //없으면 alert회원정보 없습니다 띄우고 input창 비우자
+
+  function submit() {
+    const includeUserId = userList.map((x) => x.id).includes(input.id)
+      ? true
+      : false;
+    const includeUserPw = userList.map((x) => x.pw).includes(input.pw)
+      ? true
+      : false;
+
+    return includeUserId && includeUserPw;
+  }
+  function login() {
+    setLoginSession(input.id);
+    navigate("/home");
+  }
+  function loginFail() {
+    alert("다시 입력해주세요");
+    setInput({ ...input, id: "", pw: "" });
+  }
+
   return (
     <div>
       <div className="login__wrap">
@@ -60,7 +78,9 @@ function Login() {
             <button
               type="button"
               className="button__stylebutton"
-              onClick={() => submit(input.id, input.pw)}
+              onClick={() =>
+                submit(input.id, input.pw) ? login() : loginFail()
+              }
             >
               로그인
             </button>

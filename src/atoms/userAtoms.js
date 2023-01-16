@@ -5,4 +5,7 @@ export const userListState = atom({
   default: [{ id: "admin", pw: "0000" }],
 });
 
-//userSessionState 만들어서 관리
+export const userSessionState = atom({
+  key: "userSessionState",
+  default: "",
+});

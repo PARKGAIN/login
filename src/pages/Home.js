@@ -1,10 +1,13 @@
 import React from "react";
+import { useRecoilValue } from "recoil";
+import { userSessionState } from "../atoms/userAtoms";
 
 function Home() {
+  const userId = useRecoilValue(userSessionState);
   return (
     <div>
-      <h4>사용자이름</h4>
-      <h5 id="name"></h5>
+      <h3 className="text-center mt-5rem">환영합니다</h3>
+      <h3 className="text-center">{userId}님</h3>
     </div>
   );
 }
