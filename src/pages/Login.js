@@ -10,7 +10,7 @@ function Login() {
     pw: "",
   });
   const userList = useRecoilValue(userListState);
-  const [loginSession, setLoginSession] = useRecoilState(userSessionState);
+  const [setLoginSession] = useRecoilState(userSessionState);
 
   const setId = (e) => {
     setInput({ ...input, id: e.target.value });

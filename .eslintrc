@@ -13,7 +13,6 @@
   "rules": {
     "semi": ["error", "always"],
     "quotes": ["error", "double"],
-    "react/prop-types": "off",
-    "ignoreTranspilerName": true
+    "react/prop-types": "off"
   }
 }

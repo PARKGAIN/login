@@ -19,7 +19,7 @@ function Join() {
         </tr>
         <tr>
           <td>
-            <label for="pw">*비밀번호 : </label>
+            <label>*비밀번호 : </label>
           </td>
           <td>
             <input type="password" className="pw" />
@@ -27,7 +27,7 @@ function Join() {
         </tr>
         <tr>
           <td>
-            <label for="pw_check">비밀번호 확인 : &nbsp;</label>
+            <label>비밀번호 확인 : &nbsp;</label>
           </td>
           <td>
             <input type="password" />

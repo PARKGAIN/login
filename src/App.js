@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+import React from "react";
 import "./App.css";
 import Login from "./pages/Login";
 import { Route, Routes } from "react-router-dom";
@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/home" element={<Home />} />
         <Route path="/join" element={<Join />} />
       </Routes>
