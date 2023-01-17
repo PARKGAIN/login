@@ -1,7 +1,10 @@
-module.exports = {
-  parser: "babel-parser",
-  parserOptions: {
-    sourceType: "module",
-    ecmaVersion: 2020,
-  },
-};
+require("@babel/parser").parse("code", {
+  // parse in strict mode and allow module declarations
+  sourceType: "module",
+
+  plugins: [
+    // enable jsx and flow syntax
+    "jsx",
+    "flow",
+  ],
+});
