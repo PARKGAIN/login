@@ -21,3 +21,4 @@ yarn berry는 아직은 익숙하지 않아서 module not found 와 같은 에�
 
 https://parkgain.github.io/login/
 
+warn! 여기에 실제 자신이 사용하는 id 또는 비밀번호를 입력하지 마세요!
